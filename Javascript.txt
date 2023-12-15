@@ -1,0 +1,746 @@
+What is the Javascript
+javascript is an object-oriented computer programming language commonly used to create interactive effects within the web browser. that provides access to the HTML document object model (DOM), provides access to the browser object 
+JavaScript is both synchronous and asynchronous. It executes code line by line (synchronous), but also supports asynchronous operations using callbacks, promises, and async/await to handle non-blocking tasks like network requests.
+what is webaccessbility 
+        Accessibility is the practice of making your websites usable by as many people as possible. We traditionally think of this as being about people with disabilities, but the practice of making sites accessible also benefits other groups such as those using mobile devices, or those with slow network connections.
+You might also think of accessibility as treating everyone the same, and giving them equal opportunities, no matter what their ability or circumstances.
+
+Building accessible sites benefit everyone:
+
+Semantic HTML, which improves accessibility, also improves SEO, making your site more findable.
+Caring about accessibility demonstrates good ethics and morals, which improves your public image.
+Other good practices that improve accessibility also make your site more usable by other groups, such as mobile phone users or those on low network speed. In fact, everyone can benefit from many such improvements.
+Did we mention it is also the law in some places?
+Object creation (4) types:
+
+ object literal Notation
+object.create()
+object.assign()
+Factory funciotn
+Es6 class
+1 using object literal:  you can create object using literal notation by enclousing key-value pairs with curly barces {}
+    const car = {
+
+        make = "toyata";
+        model = "Camry"
+        year = 2022,
+        start(){
+                console.log("start the car);
+        }
+    stop(){
+        console.log("stop the car);
+}
+
+}
+
+2. Object.create() :  you can create objects using Object.create() to set the prototype of the new object explicity
+
+Destructring 
+
+Destructring was introduced in Es6. its a javascript feauture that allows us to extract multiplie pieces of data form an array or object and assign them to their own variables.
+we can acess the default value here.
+
+ Arrow functions
+ES6 version of TypeScript provides an arrow function which is the shorthand syntax for defining the anonymous function, i.e., for function expressions. It omits the function keyword. We can call it fat arrow (because -> is a thin arrow and => is a "fat" arrow). It is also called a Lambda function. The arrow function has lexical scoping of the "this" keyword.
+
+The motivation for arrow function is:
+
+When we don't need to keep typing function.
+It lexically captures the meaning of this keyword.
+It lexically captures the meaning of arguments.
+
+Async and await
+
+In JavaScript, async and await are keywords that are part of the asynchronous programming model introduced in ECMAScript 2017 (ES8) to simplify working with asynchronous code. They make it easier to write and reason about code that involves asynchronous operations, such as fetching data from a server, reading a file, or waiting for a timer.
+
+We use async/await over promises for better code readability. async/await simplifies asynchronous code, making it look more like synchronous code, making it easier to understand and maintain.
+
+async Function:
+
+The async keyword is used to define a function as asynchronous.
+An async function always returns a promise, and the resolution value of the promise will be whatever the async function returns.
+async function myAsyncFunction() {
+  return 'Hello, world!';
+}
+await Expression:
+
+The await keyword is used inside an async function to pause the execution of the function until the promise is resolved.
+It can only be used inside an async function.
+async function example() {
+  let result = await someAsyncFunction();
+  console.log(result);
+}
+Handling Errors:
+
+try-catch blocks can be used to handle errors in async functions, similar to synchronous code.
+async function example() {
+  try {
+    let result = await someAsyncFunction();
+    console.log(result);
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+Promise All with await:
+
+The Promise.all method can be combined with await to concurrently execute multiple asynchronous operations.
+async function fetchData() {
+  const [data1, data2] = await Promise.all([fetchData1(), fetchData2()]);
+  console.log(data1, data2);
+}
+In this example, fetchData1 and fetchData2 are asynchronous functions that return promises. Using Promise.all with await allows you to wait for both promises to be resolved.
+
+How to avoid async await in JavaScript?
+You can avoid async/await by using traditional promises with .then() and .catch(). This allows you to handle asynchronous operations without using the async keyword and await keyword.
+
+
+
+
+What is promise in javascript?
+Promises are used to handle asynchronous operations in JavaScript. They are easy to manage when dealing with multiple asynchronous operations where callbacks can create callback hell leading to unmanageable code. 
+Benefits of Promises 
+Improves Code Readability
+Better handling of asynchronous operations
+Better flow of control definition in asynchronous logic
+Better Error Handling
+A Promise has four states: 
+fulfilled: Action related to the promise succeeded
+rejected: Action related to the promise failed
+pending: Promise is still pending i.e. not fulfilled or rejected yet
+settled: Promise has fulfilled or rejected
+we can remove duplicate valu e in a array :
+                         Set, filter&indexOf, forEach & includes
+
+using Set Method  we can remove duplicate vaules from array 
+    ex: const arr = ['apple','banana','orange','apple'];
+
+        const res = [ ...new Set(arr)]
+
+Prototype in Javascript
+Every object in JavaScript has a built-in property, which is called its prototype.
+
+prototype is used to add additional property to all objects create form a constructor function.
+
+A prototype is an object that is associated with every function and object by default in JavaScript, 
+where the function's prototype property is accessible and modifiable and 
+the object's prototype property (aka attribute) is not visible.
+
+Example
+
+function student(){ 
+  this.name = "teja";
+  this.gender = "male";
+}
+
+var studnet1 = new student();
+studnet1.age = 15;
+console.log(studnet1.age);
+
+var studnet2 = new student();
+console.log(studnet2.age);
+
+with prototype
+
+function student(){
+  this.name = "teja";
+  this.gender = "male";
+}
+
+student.prototype.age =15;
+
+var studnet1 = new student();
+studnet1.age = 15;
+console.log(studnet1.age);
+
+var studnet2 = new student();
+console.log(studnet2.age);
+BOM : 
+The Browser Object Model (BOM) allows JavaScript to "talk to" the browser.
+
+The window object is supported by all browsers. It represents the browser's window.
+
+All global JavaScript objects, functions, and variables automatically become members of the window object.
+
+Global variables are properties of the window object.
+
+Global functions are methods of the window object.
+
+
+DOM
+When a web page is loaded, the browser creates a Document Object Model of the page.
+The Document Object Model (DOM) is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content
+
+                                                    Datatypes
+
+  Primitive:    Primitive data types are immutable and the value can't be changed
+                          int, string, number, boolean, BigInt, Symbol, undefined, Null
+
+  NonPremitive - we can change - object
+
+What does mean hoisting in javascript?
+ in JavaScript hoisting is a feature that allows you to move variable's, functions and classes up on level in the call stack, so that they are visible outside of the function.
+
+This can be useful when you want to reuse a variable across different parts of your code, or when you need to keep track of a variable in multiple places in our code at once.
+
+_______________________________________________________________
+
+asynchronous and synchronous
+
+Asynchronous code allows the program to be executed immediately (Resturent order food)
+
+synchronous code will block further execution of the remaining code until it finishes the current one. (Q line for movie tickets)
+
+________________________________________________________________________________
+
+Local Storage:   local Storage is a property that allows JavaScript sites and apps to save key-value pairs in a web browser with no expiration date. 
+
+In chrome browser we can see the contents of localStorage by opening Developer tools > Application > Local Storage. localStorage provides at least 5MB of data storage across all major web browsers. This a lot more than the 4KB (maximum size) that we can store in cookies.
+
+How does store local storage 
+
+Any content/data saved to the localStorage object will be available after the browser has been restarted (closed and opened again). In order to save an item to localStorage , you can use the method setItem() . This method must be handed a key and a value
+
+Session storage The sessionStorage object stores data only for a session. It means that the data stored in the sessionStorage will be deleted when the browser is closed. A page session lasts as long as the web browser is open and survives over the page refresh
+
+ // Save data to sessionStorage
+
+sessionStorage.setItem('key', 'value');
+
+// Get saved data from sessionStorage
+
+let data = sessionStorage.getItem('key');
+
+// Remove saved data from sessionStorage
+
+sessionStorage.removeItem('key');
+
+// Remove all saved data from sessionStorage
+
+
+sessionStorage.clear();
+
+cockies  A cookie is a small piece of text sent to your browser by a website you visit. It helps the site remember information about your visit, which can make it easier to visit the site again and make the site more useful to you
+
+Cookies let you store user information in web pages
+
+
+
+This Keyword
+
+The JavaScript this keyword refers to the object it belongs to. It has different values depending on where it is used: 
+
+In a method, this refers to the owner object. 
+
+Alone, this refers to the global object.
+
+
+Null is a value that can be assigned to a variable or an object.  var hello = null;
+
+Undefined means a variable has been declared but no value is assigned to it. This type of variable is declared to be undefined.
+
+Undeclared means the variable has been declared without any data type.
+
+
+Null, Undefined are primitive data types whereas Undeclared is not a primitive data type.
+
+NaN stands for Not a Number. It represents a value which is not a valid number. It can be used to check whether a number entered is a valid number or not a number.
+
+
+== VS === in JavaScript
+
+==	===
+
+== in JavaScript is used for comparing two variables, but it ignores the datatype of variable.	=== is used for comparing two variables, but this operator also checks datatype and compares two values.
+
+It is called as comparison operator	It is also called as comparison operator
+
+Checks the equality of two operands without considering their type.	Compares equality of two operands with their types.
+
+Return true if the two operands are equal. It will return false if the two operands are not equal.	It returns true only if both values and data types are the same for the two variables.
+
+== make type correction based upon values of variables.	=== takes type of variable in consideration.
+
+The == checks for equality only after doing necessary conversations.	If two variable values are not similar, then === will not perform any conversion.
+
+
+
+1 == '1'; // true
+1 == [1]; // true
+1 == true; // true
+0 == ''"; // true
+0 == '0'; // true
+0 == false; // true
+
+var a = null;
+console.log(a == null); // true
+console.log(a == undefined); // true
+spread 
+
+The spread operator expands an expression in places where multiple argument/variables/elements are needed to present. It represents with three dots (…).
+
+For example:
+
+var mid = [3, 4];
+
+var newarray = [1, 2, ...mid, 5, 6];
+
+console.log(newarray);
+
+// [1, 2, 3, 4, 5, 6]
+
+Rest parameter
+It's a new feature in ES6 that enhances the ability to manage arguments.
+
+The Rest operator is denoted by 3 dots(...). it is used to make a new array or object from the remaining parts of an array or object.
+
+const books = ['book A', 'book B', 'book C', 'book D']; 
+
+const [firstBook, ...otherBooks] = books
+
+
+let, var, and const? 
+
+Certainly! In JavaScript, var, let, and const are used to declare variables, but they have some differences in terms of scope, hoisting, and reassignment.
+ 
+var: -
+Scope: var is function-scoped, meaning it is visible throughout the whole function in which it is declared, regardless of block scope.
+
+Hoisting: Variables declared with var are hoisted to the top of their scope, which means they can be used before the declaration.
+function exampleVar() {
+  if (true) {
+    var x = 10;
+    console.log(x); // Outputs 10
+  }
+
+  console.log(x); // Outputs 10
+}
+
+exampleVar();
+In this example, x is hoisted to the top of the function scope, so it's accessible both inside and outside the if block.
+
+let: -
+Scope: let is block-scoped, which means it's only visible within the block (e.g., if statement, for loop) in which it is declared.
+
+Hoisting: Variables declared with let are also hoisted, but unlike var, they are not initialized until the interpreter reaches the declaration.
+function exampleLet() {
+  if (true) {
+    let y = 20;
+    console.log(y); // Outputs 20
+  }
+
+  // console.log(y); // This line would cause an error because y is not defined here
+}
+
+exampleLet();
+In this example, y is not accessible outside the if block due to block-scoping.
+
+const:-
+Scope: Like let, const is block-scoped.
+Reassignment: Variables declared with const cannot be reassigned after they are initialized. However, the contents of an object or array declared with const can be modified.
+function exampleConst() {
+  const z = 30;
+  // z = 40; // This line would cause an error because you cannot reassign a const variable
+
+  const arr = [1, 2, 3];
+  arr.push(4); // This is allowed because it modifies the contents of the array
+
+  console.log(z);  // Outputs 30
+  console.log(arr); // Outputs [1, 2, 3, 4]
+}
+
+exampleConst();
+In this example, attempting to reassign z will result in an error. However, modifying the contents of the array arr is allowed.
+
+
+
+Arrow Function
+
+with arrow functions, we can write functions in a shorter way, which makes code easier to read and write.
+
+and also some advantages over functions, like being able to look at the lexical scope
+
+Arrow functions implicitly bind this keyword to the enclosing scope, so you dont need to use bind(),call(), or aply() to bind the current obect.
+
+Ex: 
+
+const button = document.querySelector('button');
+
+button.addEventListner('click',() =>{
+
+    conslole.log('Button clicked');
+
+});
+
+
+
+
+What's the difference between Host objects and Native objects?
+Junior
+Built-in objects: String, Math, RegExp, Object, Function etc. - core predefined objects are always available in JavaScript. Defined in the ECMAScript spec.
+
+Host objects: objects like window, XmlHttpRequest, DOM nodes, and so on, which are provided by the browser environment. They are distinct from the built-in objects because not all environments will have the same host objects. If JavaScript runs outside of the browser, for example as a server-side scripting language like in Node.js, different host objects will be available
+
+What is apply(),bind(),call() 
+
+    Use .call() or. apply() functions when we want to invoke the function immediately, and modify the context.
+
+    use .bind()  when we want a function later will be called with a certain context, useful in events.
+
+
+
+function add(a, b) {
+
+  return a + b;
+
+}
+
+console.log(add.call(null, 1, 2)); // 3
+
+
+console.log(add.apply(null, [1, 2])); // 3
+
+Debouncing & throting :
+
+Debouncing and throting are both techniques for optimizing event handling in javascript.
+They both work by lmiting the number of times a function can be excuted within a given time period.
+Debouncing : Debounicing waits to execute a function until a certain amount of time has passed since the last time it was called.
+This is useful for preventing unnecessary function calls when the user is interacting with an element rapidly, such as when typing in a search bar or scrolling through a list
+Example; 1. Search bar: Prevent the search results from updating every time the user types a letter.  2. Resize event :  Prevent the layout of a page from being recalculated every time the user resizes the browser window.
+Callback()
+
+A callback the function is a function that is passed to another function as an argument and is executed after some operation has been completed. 
+
+Below is an example of a simple callback function that logs to the console after some operations have been completed.
+
+function sendMessage(message){
+
+    console.log("Message:",message);
+
+}
+
+function getMessage(sendMessage){
+
+    const message = "this is the secret message";
+
+    sendMessage(message);
+
+
+}
+
+getMessage(sendMessage);
+
+
+Given a string, reverse each word in the sentence
+var string = "Welcome to this Javascript Guide!";
+
+// Output becomes !ediuG tpircsavaJ siht ot emocleW
+var reverseEntireSentence = reverseBySeparator(string, "");
+
+// Output becomes emocleW ot siht tpircsavaJ !ediuG
+var reverseEachWord = reverseBySeparator(reverseEntireSentence, " ");
+
+function reverseBySeparator(string, separator) {
+  return string.split(separator).reverse().join(separator);
+}
+
+Callback Hell 
+Callback hell is a phenomenon where a Callback is called inside another Callback. It is the nesting of multiple Callbacks inside a function. If you look at the design of the code, it seems just like a pyramid. Thus the Callback hell is also referred to as the ‘Pyramid of Doom’.
+
+Callback hell structurally is just a nesting of function calls inside a function. But, it becomes difficult to understand and keep track of the nesting once the size of the nesting is increased.
+
+The below code will give you an idea of why this phenomenon is labelled as Hell/Doom.
+
+function print(i){
+    window.alert("This is call number "+i);
+}
+
+function fun1(callback){
+    setTimeout(()=>{
+    
+        let i = 1 ;
+        callback(i); i++ ;
+        setTimeout(()=>{
+     
+      	    callback(i); i++;
+      	    setTimeout(()=>{
+        
+        	    callback(i); i++ ;
+        	    setTimeout(()=>{
+          
+          		    callback(i); i++ ;
+          		    setTimeout(()=>{
+            
+            		    callback(i); i++ ;
+            		    // .... and so on
+            		    
+          		    }, 800)
+        	    }, 700)
+      	    }, 500)
+        }, 300)
+    }, 100)
+}
+
+// Calling fun1 with print function as parameter
+fun1(print);
+
+
+call stack()
+
+JavaScript engine uses a call stack to manage execution contexts: the Global Execution Context and Function Execution Contexts.
+
+The call stack works based on the LIFO principle i.e., last-in-first-out.
+
+When you execute a script, the JavaScript engine creates a Global Execution Context and pushes it on top of the call stack.
+
+Whenever a function is called, the JavaScript engine creates a Function Execution Context for the function, pushes it on top of the Call Stack, and starts executing the function.
+
+If a function calls another function, the JavaScript engine creates a new Function Execution Context for the function that is being called and pushes it on top of the call stack.
+
+When the current function completes, the JavaScript engine pops it off the call stack and resumes the execution where it left off in the last code listing.
+
+
+The script will stop when the call stack is empty.
+
+Ex:
+
+function add(a, b) {
+
+    return a + b;
+
+}
+
+function average(a, b) {
+
+    return add(a, b) / 2;
+
+}
+
+let x = average(10, 20);
+
+
+________________________________________________________________________
+
+what is closure in javascript?    
+
+Closures are the combination of lexical environment and function within which the function was declared. 
+ The closure will consist of all the local variables that were in-scope when the closure was created.
+In other words, a closure gives you access to an outer function's scope from an inner function
+function makeAdder(x) {
+	// parameter `x` is an inner variable
+
+	// inner function `add()` uses `x`, so
+	// it has a "closure" over `x`
+	function add(y) {
+		return y + x;
+	};
+
+	return add;
+}
+
+Reference to inner add the function returned is able to remember what x value was passed to makeAdder function call.
+var plusOne = makeAdder( 1 ); // x is 1, plusOne has a reference to add(y)
+var plusTen = makeAdder( 10 ); // x is 10
+
+plusOne(3); // 1 (x) + 3 (y) = 4
+plusTen(13); // 10 (x) + 13 (y) = 23 
+In C and most other common languages, after a function returns, all the local variables are no longer accessible because the stack frame is destroyed.
+
+In JavaScript, if you declare a function within another function, then the local variables can remain accessible after returning from the function you called.
+
+A closure is a stack frame that is allocated when a function starts its execution, and not freed after the function returns (as if a 'stack frame' were allocated on the heap rather than the stack!). In JavaScript, you can think of a function reference variable as having both a pointer to a function as well as a hidden pointer to a closure.
+
+Pure and Impure functions in Javascript
+
+      Pure functions must be both predictable and have no side effects. 
+
+      impure function kind the opposite of the pure function.it doesn't predictably produce the same result when we called multiple times. with side effects.
+
+what is the strict mode in javascript?
+
+    JavaScript's strict mode, introduced in ECMAScript 5, is a way to opt into a restricted variant of JavaScript, thereby implicitly opting out of "sloppy mode". Strict mode isn't just a subset: it intentionally has different semantics from normal code.
+
+Strict mode makes several changes to normal JavaScript semantics:
+
+Eliminates some JavaScript silent errors by changing them to throw errors.
+
+Fixes mistakes that make it difficult for JavaScript engines to perform optimizations: strict mode code can sometimes be made to run faster than identical code that's not strict mode.
+
+Prohibits some syntax likely to be defined in future versions of ECMAScript.
+
+What is event bubbling in javascript
+
+    The bubbles event property returns a boolean value that indicated whether or not an event is a bubbling event. bubbled out and top hierarchy
+
+Event delegation
+
+Capturing and bubbling allow us to implement one of the most powerful events handling patterns called event delegation.
+
+Event Delegation is basically a pattern to handle events efficiently. Instead of adding an event listener to each and every similar element, we can add an event listener to a parent element and call an event on a particular target using the .target property of the event object.
+
+
+  map() :                  
+
+                   map() method is used to create a new array in an existing array.  applying a function to each one of the elements of the first array.
+
+                    synatx : var newarray = arr.map(function callback(element,index,array){
+
+                                                             // returns value of new array
+
+                                    }, [thisArg])    
+
+           filter() :
+
+                      The filter() method takes each element in an array and applies a conditional statement against it. if the conditional statement returns true, the element gets pushed to the output array. if the conditional statement returns false, the element does not push into the output array. 
+
+                    syntax : 
+
+                                    var new_array = arr.filter(function callback(element,index,array){
+
+                                                   // returns true or false
+
+                                } [, thisArg] )
+
+________________________________________________________________________
+
+splice() and slice()
+
+splice() method returns the removed item(s) in an array
+
+slice() method returns the selected element(s) in an array, as a new array object.
+
+The splice() method changes the original array and slice() method doesn’t change the original array.
+
+The splice() method can take n number of arguments and slice() method takes 2 arguments.
+
+
+
+HIEHER ORDER FUNCTIONS
+
+Higher-order functions are functions that take other functions as arguments or return functions as their results. ... sort, reduce, filter, forEach are other examples of higher-order functions built into the language.
+
+
+[1, 2, 3, 4].map(function(n){
+    return n * 2
+}) // [ 2, 4, 6, 8 ]
+                
+
+CommonJs & ES6 module 
+
+ES modules are natively supported in modern browsers, 
+
+while CommonJS modules are not.
+
+CommonJS is an older module system for JavaScript that was designed for server-side JavaScript development with Node.js. It was later adopted by the front-end community as well (this way you don't need a gazillion script tags in your HTML). CommonJS modules work by using require statements to load dependencies, and module.exports statements to define the exports of a module.
+
+// my-module.js
+
+module.exports = {
+
+  myValue: 42
+
+};
+
+// main.js
+
+const myModule = require('./my-module.js');
+
+
+console.log(myModule.myValue); // 42
+
+ES Modules
+ES modules are a standardized module system for JavaScript that was introduced in ES6. It provides a way to organize and reuse code in a modular and maintainable manner. ES modules allow developers to define exports (the values or functions they want to make available to other parts of their code), and import them into other parts of their code.
+
+// my-module.js
+
+export const myValue = 42;
+
+
+
+// main.js
+
+import { myValue } from './my-module.js';
+
+console.log(myValue); // 42
+
+How to handle exceptions/errors in JavaScript?
+
+Handling exceptions in JavaScript is crucial for writing robust and reliable code. You can use try, catch, finally, and throw statements for exception handling. 
+
+Try-Catch Statement:
+
+
+The try block contains the code that might throw an exception.
+The catch block contains the code that will be executed if an exception is thrown in the try block.
+The catch block takes an exception object as a parameter, which you can use to get information about the error.
+try {
+    // Code that might throw an exception
+} catch (error) {
+    // Code to handle the exception
+    console.error(error.message);
+}
+Finally Block:
+
+The finally block contains code that will be executed regardless of whether an exception was thrown or not.
+It's useful for cleanup operations, like closing files or network connections.
+try {
+    // Code that might throw an exception
+} catch (error) {
+    // Code to handle the exception
+    console.error(error.message);
+} finally {
+    // Code that will be executed regardless of an exception
+}
+Throw Statement:
+
+You can use the throw statement to throw a user-defined exception or to rethrow caught exceptions.
+function divide(a, b) {
+    if (b === 0) {
+        throw new Error("Cannot divide by zero");
+    }
+    return a / b;
+}
+
+try {
+    let result = divide(10, 0);
+    console.log(result);
+} catch (error) {
+    console.error(error.message);
+}
+Custom Errors:
+
+You can create custom error types by extending the built-in Error object.
+class MyCustomError extends Error {
+    constructor(message) {
+        super(message);
+        this.name = "MyCustomError";
+    }
+}
+
+try {
+    throw new MyCustomError("This is a custom error");
+} catch (error) {
+    console.error(error.name + ": " + error.message);
+}
+What is the new keyword in JavaScript?
+Senior
+It creates a new object. The type of this object is simply object.
+
+It sets this new object's internal, inaccessible, [prototype] (i.e.__proto__) property to be the constructor function's external, accessible, prototype object (every function object automatically has a prototype property).
+
+It makes the this variable point to the newly created object.
+
+It executes the constructor function, using the newly created object whenever this is mentioned.
+
+It returns the newly created object, unless the constructor function returns a non-null object reference. In this case, that object reference is returned instead.
+
+function New(func) {
+    var res = {};
+    if (func.prototype !== null) {
+        res.__proto__ = func.prototype;
+    }
+    var ret = func.apply(res, Array.prototype.slice.call(arguments, 1));
+    if ((typeof ret === "object" || typeof ret === "function") && ret !== null) {
+        return ret;
+    }
+    return res;
+}
